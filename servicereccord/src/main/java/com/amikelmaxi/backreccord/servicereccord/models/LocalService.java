@@ -4,6 +4,8 @@ package com.amikelmaxi.backreccord.servicereccord.models;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.amikelmaxi.backreccord.servicereccord.models.dtos.LocalServiceDTO;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -37,4 +39,13 @@ public class LocalService {
     @ManyToOne
     @JoinColumn(name = "client_id")
     private Client client;
+
+    public LocalService(LocalServiceDTO obj){
+        this.client = obj.getClient();
+        this.cost = obj.getCost();
+        this.description = obj.getDescription();
+        this.id = obj.getId();
+        this.name = obj.getName();
+        this.serviceDate = obj.getServiceDate();
+    }
 }

@@ -3,6 +3,7 @@ package com.amikelmaxi.backreccord.servicereccord.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.amikelmaxi.backreccord.servicereccord.models.dtos.ClientDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
@@ -28,7 +29,6 @@ public class Client {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
     private Integer id;
     private String name;
     private String cpf;
@@ -38,4 +38,12 @@ public class Client {
     @JsonIgnore
     @OneToMany(mappedBy = "client")
     private List<LocalService> localServices = new ArrayList<>();
+
+    public Client(ClientDTO obj){
+        this.id = obj.getId();
+        this.name = obj.getName();
+        this.cpf = obj.getCpf();
+        this.email = obj.getEmail();
+        this.fone = obj.getFone();
+    }
 }

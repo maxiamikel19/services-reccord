@@ -3,6 +3,7 @@ package com.amikelmaxi.backreccord.servicereccord.models.dtos;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.amikelmaxi.backreccord.servicereccord.models.Client;
 import com.amikelmaxi.backreccord.servicereccord.models.LocalService;
 
 import lombok.AllArgsConstructor;
@@ -20,10 +21,10 @@ public class LocalServiceDTO {
     private String description;
     private LocalDate serviceDate;
     private BigDecimal cost;
-    private String client;
+    private Client client;
 
     public LocalServiceDTO(LocalService obj){
-        this.client = obj.getClient().getName();
+        this.client = obj.getClient();
         this.cost = obj.getCost();
         this.description = obj.getDescription();
         this.id = obj.getId();
