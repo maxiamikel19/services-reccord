@@ -40,7 +40,7 @@ export default {
     background: #ffffff;
     margin: 0px;
     padding: 0px;
-    width: 20%;
+    width: 15%;
   }
 
   .main-right{
@@ -49,7 +49,7 @@ export default {
     background: #ffffff;
     margin: 1em;
     padding: 0px;
-    width: 80%;
+    width: 85%;
     box-sizing: border-box;
   }
 
