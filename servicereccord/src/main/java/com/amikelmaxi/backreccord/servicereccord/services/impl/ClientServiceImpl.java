@@ -45,15 +45,17 @@ public class ClientServiceImpl implements ClientService{
     @Override
     public Client findByCpf(String cpf) {
         Optional<Client> optionalClient = this.clientRepository.findByCpf(cpf);
-        if(optionalClient.isPresent()){
-            throw new ObjectDuplicateCreateException("O CPF já existe no sistema");
+        if(!optionalClient.isPresent()){
+            throw new ObjectDuplicateCreateException("O CPF não existe");
         }
         return optionalClient.get();
     }
 
     @Override
-    public void update(Integer id) {
-        Client optionalClient = this.findById(id);
+    public void update(ClientDTO clientDTO) {
+        Client optionalClient = this.findById(clientDTO.getId());
+        optionalClient.setFone(clientDTO.getFone());
+        optionalClient.setName(clientDTO.getName());
         this.clientRepository.save(optionalClient);
     }
 

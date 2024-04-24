@@ -8,5 +8,5 @@ public interface ClientService {
     Client save(ClientDTO client);
     Client findById(Integer id);
     Client findByCpf(String cpf);
-    void update(Integer id);
+    void update(ClientDTO clientDTO);
 }
