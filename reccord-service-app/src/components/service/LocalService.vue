@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container-fluid">
         <h1>Titulo</h1>
         <table class="table table-spriped">
             <thead>
@@ -50,6 +50,6 @@ import LocalServiceService from '../../services/LocalServiceService';
     }
 </script>
 
-<style lang="scss" scoped>
+<style  scoped>
 
 </style>
